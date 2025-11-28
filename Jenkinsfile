@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/pgnaik/php-mysql-crud-app.git'
+                git branch: 'main', url: 'https://github.com/pgnaik/bootstrap-php-mysql-crud-app.git'
             }
         }
 
