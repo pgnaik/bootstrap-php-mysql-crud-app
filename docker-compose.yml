@@ -8,6 +8,8 @@ services:
       - db
     networks:
       - appnet
+    volumes:
+      - ./src:/var/www/html   # <-- mount local src folder
 
   db:
     image: mysql:8.0
