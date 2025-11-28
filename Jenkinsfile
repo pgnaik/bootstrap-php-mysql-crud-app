@@ -1,5 +1,9 @@
 pipeline {
     agent any
+        environment {
+        DOCKER_IMAGE = “pgn123/bootstrap-php-mysql-crud-app"  // change this
+        DOCKER_TAG = "latest"
+    }
 
     stages {
         stage('Checkout') {
@@ -22,10 +26,8 @@ pipeline {
                                                      usernameVariable: 'USER',
                                                      passwordVariable: 'PASS')]) {
                         // Login and push
-                        bat '''
-                          echo $PASS | docker login -u $USER --password-stdin
-                          docker push $DOCKER_IMAGE:$DOCKER_TAG
-                        '''
+                        bat "echo $PASS | docker login -u $USER --password-stdin"
+                        bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}" 
                     }
                 }
             }
