@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-        DOCKER_IMAGE = “pgn123/bootstrap-php-mysql-crud-app"  // change this
+        DOCKER_IMAGE = "pgn123/bootstrap-php-mysql-crud-app"  // change this
         DOCKER_TAG = "latest"
     }
 
